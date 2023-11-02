@@ -11,6 +11,7 @@
 #include <rtdevice.h>
 #include "rtthread.h"
 
+#ifdef PKG_USING_SYSTEM_RUN_LED
 void System_Run_LED_entry(void *parameter)
 {
     rt_base_t System_Run_LED = rt_pin_get(System_Run_LED_Pin_Name);
@@ -60,3 +61,5 @@ int System_Run_LED(void)
     return RT_EOK;
 }
 INIT_APP_EXPORT(System_Run_LED);
+
+#endif //PKG_USING_SYSTEM_RUN_LED
